@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --jade-navy: #0a1628;
+  --jade-dark: #0d1f3c;
+  --jade-green: #00a86b;
+  --jade-green-light: #00c47d;
+  --jade-green-muted: #e6f7f1;
+  --accent-blue: #1e6fff;
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+  --warning-amber: #f59e0b;
+  --danger-red: #ef4444;
+  --text-primary-light: #0a1628;
+  --text-primary-dark: #f1f5f9;
+  --text-secondary-light: #64748b;
+  --text-secondary-dark: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased transition-colors duration-200 dark:bg-slate-900 dark:text-slate-100;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+.welcome-hero {
+  background: radial-gradient(circle at 20% 10%, #1a4f8f 0%, #1d3367 30%, #332f69 55%, #5a385f 75%, #ad4c59 100%);
+}
+
+.welcome-gradient {
+  background: linear-gradient(125deg, rgba(5, 24, 48, 0.7) 10%, rgba(67, 34, 82, 0.28) 58%, rgba(242, 131, 77, 0.3) 100%);
+  animation: welcome-gradient-shift 12s ease-in-out infinite alternate;
+}
+
+.welcome-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.18) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+.welcome-skyline {
+  background:
+    linear-gradient(to top, rgba(5, 29, 58, 0.95), rgba(5, 29, 58, 0.95)) bottom / 100% 42px no-repeat,
+    linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 2%,
+      rgba(5, 29, 58, 0.95) 2%,
+      rgba(5, 29, 58, 0.95) 4%,
+      transparent 4%,
+      transparent 7%,
+      rgba(5, 29, 58, 0.95) 7%,
+      rgba(5, 29, 58, 0.95) 9.5%,
+      transparent 9.5%,
+      transparent 13%,
+      rgba(5, 29, 58, 0.95) 13%,
+      rgba(5, 29, 58, 0.95) 15.3%,
+      transparent 15.3%,
+      transparent 18.7%,
+      rgba(5, 29, 58, 0.95) 18.7%,
+      rgba(5, 29, 58, 0.95) 21.4%,
+      transparent 21.4%,
+      transparent 24.5%,
+      rgba(5, 29, 58, 0.95) 24.5%,
+      rgba(5, 29, 58, 0.95) 27.2%,
+      transparent 27.2%,
+      transparent 31.3%,
+      rgba(5, 29, 58, 0.95) 31.3%,
+      rgba(5, 29, 58, 0.95) 34%,
+      transparent 34%,
+      transparent 37.5%,
+      rgba(5, 29, 58, 0.95) 37.5%,
+      rgba(5, 29, 58, 0.95) 40.2%,
+      transparent 40.2%,
+      transparent 44.5%,
+      rgba(5, 29, 58, 0.95) 44.5%,
+      rgba(5, 29, 58, 0.95) 47.8%,
+      transparent 47.8%,
+      transparent 51%,
+      rgba(5, 29, 58, 0.95) 51%,
+      rgba(5, 29, 58, 0.95) 53.4%,
+      transparent 53.4%,
+      transparent 57.2%,
+      rgba(5, 29, 58, 0.95) 57.2%,
+      rgba(5, 29, 58, 0.95) 60.5%,
+      transparent 60.5%,
+      transparent 64%,
+      rgba(5, 29, 58, 0.95) 64%,
+      rgba(5, 29, 58, 0.95) 67.2%,
+      transparent 67.2%,
+      transparent 71%,
+      rgba(5, 29, 58, 0.95) 71%,
+      rgba(5, 29, 58, 0.95) 74.5%,
+      transparent 74.5%,
+      transparent 78%,
+      rgba(5, 29, 58, 0.95) 78%,
+      rgba(5, 29, 58, 0.95) 81.1%,
+      transparent 81.1%,
+      transparent 84.8%,
+      rgba(5, 29, 58, 0.95) 84.8%,
+      rgba(5, 29, 58, 0.95) 87.6%,
+      transparent 87.6%,
+      transparent 91.5%,
+      rgba(5, 29, 58, 0.95) 91.5%,
+      rgba(5, 29, 58, 0.95) 94.5%,
+      transparent 94.5%
+    );
+  opacity: 0.9;
+}
+
+.welcome-star {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  animation-name: welcome-twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.welcome-orb {
+  animation: welcome-float 8s ease-in-out infinite;
+}
+
+.welcome-orb-delayed {
+  animation: welcome-float 10s ease-in-out infinite reverse;
+}
+
+@keyframes welcome-twinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes welcome-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-18px) translateX(10px);
+  }
+}
+
+@keyframes welcome-gradient-shift {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    transform: scale(1.08) translateX(-2.5%);
+  }
+}
